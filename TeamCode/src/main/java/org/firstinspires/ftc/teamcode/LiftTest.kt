@@ -15,13 +15,15 @@ class LiftTest : LinearOpMode() {
         val liftMotorRight = hardwareMap.get(DcMotor:: class.java, "motorR")
         val liftMotorLeft = hardwareMap.get(DcMotor:: class.java, "motorL")
 
-        liftMotorLeft.direction = DcMotorSimple.Direction.REVERSE
+        liftMotorRight.direction = DcMotorSimple.Direction.REVERSE
 
 
         waitForStart()
 
         while(opModeIsActive()) {
-            val speed = gamepad1.right_stick_y.toDouble()
+            val speed = gamepad1.right_trigger.toDouble() - gamepad1.left_trigger.toDouble()
+
+            telemetry.addData("buton A ", gamepad1.a)
 
             liftMotorLeft.power = speed
             liftMotorRight.power = speed
