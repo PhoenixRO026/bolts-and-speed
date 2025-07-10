@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.Servo
 class SteeringTuning : LinearOpMode() {
     override fun runOpMode() {
         val servo = hardwareMap.get(Servo::class.java, "servo")
-        var servoPos = 0.5
+        var servoPos = 0.3
 
         waitForStart()
 
