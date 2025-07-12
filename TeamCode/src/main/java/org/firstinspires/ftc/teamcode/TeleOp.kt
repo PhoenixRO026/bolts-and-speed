@@ -14,8 +14,9 @@ class TeleOp : LinearOpMode(){
         val motorLeft = hardwareMap.get(DcMotor::class.java, "motorL")
         val servo = hardwareMap.get(Servo::class.java, "servo")
 
-        val servoMin = 0.279
-        val servoMax = 0.493
+        val servoMin = 0.279 - 0.05
+        val servoMax = 0.493 +  0.05
+
         var servoPos: Double
         var input: Double
 
