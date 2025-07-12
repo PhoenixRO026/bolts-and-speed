@@ -31,7 +31,7 @@ class TeleOp : LinearOpMode(){
             motorLeft.power = power
 
             val direction = gamepad1.left_stick_x.toDouble()
-            input = direction * direction * direction.sign
+            input = direction
             servoPos = input * 0.5 + 0.5
             servoPos = servoPos * (servoMax - servoMin) + servoMin
             servo.position = servoPos
